@@ -35,3 +35,11 @@ Simulation du client `ProductApiClient` pour tester les différents scénarios d
 ```bash
 mvn test
 ```
+
+---
+
+## 📝 Réponses aux Questions
+
+1.  **Tests d'intégration** : Ils servent à s'assurer que les composants d'un système communiquent correctement entre eux (ex: Controller -> Service -> DAO). Ils couvrent les failles que les tests unitaires isolés ne peuvent pas détecter.
+2.  **Rôle de JUnit 5** : Fournit le framework de base pour structurer les tests, exécuter les suites de tests et valider les comportements via des assertions (`assertEquals`, `assertThrows`, etc.).
+3.  **Utilité du Mocking (Mockito)** : Permet d'isoler une classe en remplaçant ses dépendances réelles (base de données, API externe) par des objets simulés. Cela rend les tests plus rapides, déterministes et indépendants de l'environnement extérieur.
