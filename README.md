@@ -1,28 +1,55 @@
-# TP3 - Tests Unitaires et d'Intégration (AQL)
+# 🚀 TP3 - Maîtrise des Tests Unitaires & d'Intégration (AQL)
 
-Ce projet contient les solutions pour le TP3 sur les tests unitaires et d'intégration en Java utilisant JUnit 5 et Mockito.
+Bienvenue dans ce projet dédié à l'apprentissage des tests en Java ! L'objectif ici est de comprendre comment construire des applications robustes en utilisant l'**Injection de Dépendances** et le **Mocking**.
 
-## Structure du Projet
+## 🎯 Ce que nous avons appris
+Ce TP se concentre sur trois piliers du développement moderne :
+*   **JUnit 5** : Pour structurer nos tests et valider nos résultats.
+*   **Mockito** : Pour simuler le monde extérieur (bases de données, API) et tester nos classes en isolation totale.
+*   **Injection de Dépendances** : Pour rendre notre code plus flexible et facile à tester.
 
-- **Exercice 1 : Interaction Simple**
-    - `User`, `UserRepository`, `UserService`
-    - Test : `UserServiceTest` (Utilisation de Mockito pour simuler le repository).
-- **Exercice 2 : Interaction avec Base de Données**
-    - `Order`, `OrderDao`, `OrderService`, `OrderController`
-    - Test : `OrderControllerTest` (Vérification des appels en cascade).
-- **Exercice 3 : Intégration d'API avec Mocking**
-    - `Product`, `ProductApiClient`, `ProductService`
-    - Test : `ProductServiceTest` (Scénarios : Succès, Format incompatible, Échec API).
+---
 
-## Réponses aux Questions / Objectifs
+## 📂 Organisation du Projet
+Nous avons choisi une structure claire pour séparer le code partagé des exercices spécifiques :
 
-1.  **Concepts des tests d'intégration** : Ils permettent de vérifier que les différents modules d'une application communiquent correctement entre eux (ex: Controller vers Service vers DAO).
-2.  **Utilisation de JUnit 5** : Utilisé pour structurer les tests, définir les assertions (`assertEquals`, `assertThrows`) et gérer le cycle de vie des tests.
-3.  **Mocking avec Mockito** : Permet d'isoler le composant testé en simulant ses dépendances. Cela évite d'avoir besoin d'une base de données réelle ou d'une API externe active pendant les tests.
+```text
+.
+├── tpaql_shared/         # Modèles partagés (User, Order, Product)
+├── tp3_part1/
+│   ├── src/              # Votre code source par exercice
+│   │   ├── ex1/ (UserService)
+│   │   ├── ex2/ (OrderController chain)
+│   │   └── ex3/ (Product API integration)
+│   └── test/             # Vos tests JUnit 5 correspondants
+└── pom.xml               # Configuration Maven (JUnit 5 + Mockito)
+```
 
-## Comment exécuter les tests ?
+---
 
-Assurez-vous d'avoir Maven installé, puis lancez :
+## 🛠️ Les Exercices en détail
+
+### 1️⃣ Interaction Simple (Ex 1)
+Nous testons `UserService` en isolant son `UserRepository`. 
+*   *Concept* : Mocking de base et injection simple.
+
+### 2️⃣ Cascade de Dépendances (Ex 2)
+On vérifie la communication entre `Controller` → `Service` → `DAO`.
+*   *Concept* : Vérification des interactions dans une architecture à plusieurs couches.
+
+### 3️⃣ Simulation d'API Externe (Ex 3)
+On simule un client API externe (`ProductApiClient`) pour tester différents scénarios (succès, erreur de format, panne réseau).
+*   *Concept* : Gestion des cas limites et robustesse.
+
+---
+
+## 🚀 Comment lancer les tests ?
+
+Rien de plus simple ! Ouvrez votre terminal et tapez :
+
 ```bash
 mvn test
 ```
+
+---
+*Réalisé dans le cadre du cours d'Architecture Logique (AQL).*
